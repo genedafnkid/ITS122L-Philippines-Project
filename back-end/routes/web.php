@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/donate', function () {
+    return view('donate');
+})->name('donate');
+
+Route::get('/events', function () {
+    return view('events');
+})->name('events');
+
+Route::get('/volunteer', function () {
+    return view('volunteer');
+})->name('volunteer');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
