@@ -31,3 +31,11 @@ nav a {
 nav a:hover {
     background-color: #555;
 }
+
+#login{
+    border-radius: 50px;
+}
+
+.img-fluid{
+    border-radius: 10px;
+}
