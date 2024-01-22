@@ -29,7 +29,12 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #555;
+    background-color: #EBF2F8;
+    color: #3F56FF  !important;
+}
+
+p{
+    text-align: justify;
 }
 
 #login{

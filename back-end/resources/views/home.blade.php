@@ -12,20 +12,30 @@
     @include('NAVBAR')
 
     <!-- Your page content goes here -->
-    
-    <div class="container mt-5" id="home" style="padding-top: 3%">
+
+    <div class="container mt-5" id="home">
         <div class="row">
-            <div class="col-md-6 mt-5" style="padding-top: 4%">
+            <div class="col-md-8 mt-5" style="padding-top: 9%">
                 <!-- Text on the right -->
                 <h1>Save Animals of Love and Light - Save ALL</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec elementum orci. Lorem ipsum
-                    dolor sit amet, consectetur adipiscing elit. Phasellus nec elementum orci. Donec vestibulum tempus
-                    arcu. In id rutrum nibh. Sed sit amet pulvinar risus. Mauris fermentum, ex eget malesuada fringilla,
-                    lorem dui </p>
+                <p>Welcome to Save ALL - where the journey of rescuing goes beyond saving lives; it's a commitment that
+                    lasts a lifetime. Our mission extends beyond pulling animals from pounds, saving them from the harsh
+                    realities of the streets, or shielding them from the cruelty of human hands. We stand by them until
+                    their last breath, ensuring they live a life filled with love and care.
+                </p>
+                <p>For these rescued companions, proper nutrition and medical care are essential. Many of them suffered
+                    from malnutrition and the adverse effects of consuming inadequate and harmful food during their time
+                    as strays. Now, we strive to provide them with the care they need to lead healthy and fulfilling
+                    lives. </p>
+                <p>Join us in this ongoing mission to offer a second chance at life to these resilient animals. Your
+                    support, whether big or small, will directly impact their quality of life. Can you be an angel
+                    sponsor or an angel pledger for these dogs and cats? Reach out to us and become a crucial part of
+                    our journey to save ALL. Thank you for making a difference in their lives.
+                </p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <!-- Placeholder image on the left -->
-                <img src="https://via.placeholder.com/700x600" alt="Placeholder Image">
+                <img src="assets/images/home.jpg" alt="Placeholder Image" style="max-width: 550px; height: 700px;">
             </div>
         </div>
     </div>
