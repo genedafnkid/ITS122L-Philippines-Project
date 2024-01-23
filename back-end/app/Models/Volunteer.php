@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Volunteer extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'first_name', 'last_name', 'email', 'phone_number', 'address',
+        'city', 'state', 'postal_code', 'birth_date', 'availability',
+        'skills', 'interests', 'previous_experience', 'additional_info',
+        'submission_date',
+    ];
+
+    protected $casts = [
+        'birth_date' => 'date',
+        'submission_date' => 'datetime',
+    ];
 }
