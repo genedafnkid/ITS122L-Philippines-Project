@@ -15,15 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('01_home');
 })->name('home');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('03_about');
 })->name('about');
 
 Route::get('/donate', function () {
-    return view('donate');
+    return view('02_donate');
 })->name('donate');
 
 Route::get('/events', function () {
@@ -35,6 +35,6 @@ Route::get('/volunteer', function () {
 })->name('volunteer');
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('04_contact');
 })->name('contact');
 

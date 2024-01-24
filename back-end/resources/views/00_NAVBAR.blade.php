@@ -32,6 +32,7 @@
             <!-- Middle: Navbar Buttons -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav mx-auto">
+                    <a class="nav-link" href="{{ route('home') }}">Home</a>
                     <a class="nav-link" href="{{ route('about') }}">About Us</a>
                     <a class="nav-link" href="{{ route('donate') }}">Donate</a>
 
