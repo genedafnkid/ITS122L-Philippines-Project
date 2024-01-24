@@ -38,3 +38,9 @@ Route::get('/contact', function () {
     return view('04_contact');
 })->name('contact');
 
+Route::get('/login', function () {
+    return view('05_login');
+})->name('login');
+
+
+Route::post('/submit_contact_form', 'ContactController@submitForm')->name('submit_contact_form');
