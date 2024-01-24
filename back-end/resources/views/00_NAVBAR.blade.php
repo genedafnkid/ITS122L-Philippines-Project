@@ -69,8 +69,9 @@
 
             <!-- Left Side: Placeholder Image -->
             <div class="navbar-brand">
-                <button class="btn btn-primary" id="login">LOG IN</button>
+                <a class="btn btn-primary" id="login" href="{{ route('login')}}">LOG IN</a>
             </div>
+            
         </div>
     </nav>
 

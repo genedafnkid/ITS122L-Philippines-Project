@@ -1,54 +1,51 @@
+<!-- index.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blade Home</title>
-
-    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+    <title>Save ALL</title>
 </head>
+
 <body>
+    @include('00_NAVBAR')
 
-<header>
-    <h1>
-        Home
-    </h1>
-</header>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about') }}">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('donate') }}">Donate</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('events') }}">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('volunteer') }}">Volunteer</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
-                </li>
-            </ul>
+    <!-- Home Section -->
+    <div class="container mt-5 mb-5" id="home">
+        <div class="row">
+            <div class="col-md-7" style="padding-top: 9%">
+                    <!-- Text on the right -->
+                    <h1>Save Animals of Love and Light - Save ALL</h1>
+                    <p>Welcome to Save ALL - where the journey of rescuing goes beyond saving lives; it's a commitment
+                        that
+                        lasts a lifetime. Our mission extends beyond pulling animals from pounds, saving them from the
+                        harsh
+                        realities of the streets, or shielding them from the cruelty of human hands. We stand by them
+                        until
+                        their last breath, ensuring they live a life filled with love and care.
+                    </p>
+                    <p>For these rescued companions, proper nutrition and medical care are essential. Many of them
+                        suffered
+                        from malnutrition and the adverse effects of consuming inadequate and harmful food during their
+                        time
+                        as strays. Now, we strive to provide them with the care they need to lead healthy and fulfilling
+                        lives. </p>
+                    <p>Join us in this ongoing mission to offer a second chance at life to these resilient animals. Your
+                        support, whether big or small, will directly impact their quality of life. Can you be an angel
+                        sponsor or an angel pledger for these dogs and cats? Reach out to us and become a crucial part
+                        of
+                        our journey to save ALL. Thank you for making a difference in their lives.
+                    </p> 
+            </div>
+            <div class="col-md-4">
+                <!-- Placeholder image on the left -->
+                <img src="assets/images/home.jpg" alt="Placeholder Image" style="max-width: 550px; height: 700px;">
+            </div>
         </div>
     </div>
-</nav>
 
-<div class="container mt-4">
-    @yield('content')
-</div>
-
-<!-- Include Bootstrap 5 JS and Popper.js via CDN -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    @include('00_FOOTER')
 </body>
+
 </html>

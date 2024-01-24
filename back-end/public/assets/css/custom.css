@@ -24,12 +24,19 @@
     src: url('/assets/fonts/Hypermarket-Regular.ttf') format('truetype');
 }
 
+html,
 body {
-    font-family: 'Bebas-Neue', sans-serif; /* Default font fallback */
-    margin: 0;
     padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+
+body {
+    font-family: 'BebasNeue', sans-serif;
     box-sizing: border-box;
     background-image: url('/assets/images/background.png');
+    font-size: larger;
 
 }
 
@@ -40,11 +47,11 @@ header {
     padding: 20px;
 }
 
-nav {
+nav, nav a {
     display: flex;
     justify-content: center;
     background-color: #444;
-    padding: 10px;
+    font-size: larger;
 }
 
 nav a:hover {
@@ -52,7 +59,8 @@ nav a:hover {
     color: #3F56FF !important;
 }
 
-#home, #about{
+#home,
+#about {
     background-color: #f8f9fa;
     padding: 2%;
     border-radius: 5%;
@@ -70,6 +78,7 @@ h1 {
 
 #login {
     border-radius: 50px;
+    font-family: 'sans-serif';
 }
 
 .img-fluid {
@@ -79,6 +88,14 @@ h1 {
 #mission-vision {
     padding: 50px 0;
     text-align: center;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
+    font-family: 'BebasNeue' !important;
 }
 
 .content-box {
@@ -93,7 +110,6 @@ h1 {
 .content-box:hover {
     transform: scale(1.05);
 }
-
 
 .content-box {
     color: #495057;

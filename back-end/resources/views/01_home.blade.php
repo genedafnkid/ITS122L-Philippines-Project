@@ -12,7 +12,7 @@
     @include('00_NAVBAR')
 
     <!-- Home Section -->
-    <div class="container mt-5 mb-5" id="home">
+    <div class="container mt-5" id="home">
         <div class="row">
             <div class="col-md-7" style="padding-top: 9%">
                     <!-- Text on the right -->
