@@ -1,8 +1,36 @@
+@font-face {
+    font-family: 'AltmannGrotesk-Bold';
+    src: url('/assets/fonts/AltmannGrotesk-Bold.ttf') format('truetype');
+    /* Add more src lines if you have different font styles or weights */
+}
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('/assets/fonts/BebasNeue.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hypermarket-Bold';
+    src: url('/assets/fonts/Hypermarket-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hypermarket-Light';
+    src: url('/assets/fonts/Hypermarket-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hypermarket-Regular';
+    src: url('/assets/fonts/Hypermarket-Regular.ttf') format('truetype');
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Bebas-Neue', sans-serif; /* Default font fallback */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url('/assets/images/background.png');
+
 }
 
 header {
@@ -19,21 +47,54 @@ nav {
     padding: 10px;
 }
 
-
-
 nav a:hover {
     background-color: #EBF2F8;
-    color: #3F56FF  !important;
+    color: #3F56FF !important;
 }
 
-p{
+#home, #about{
+    background-color: #f8f9fa;
+    padding: 2%;
+    border-radius: 5%;
+}
+
+div p {
+    font-family: 'Hypermarket-Light';
     text-align: justify;
+    font-size: 18px;
 }
 
-#login{
+h1 {
+    font-family: 'AltmannGrotesk-Bold';
+}
+
+#login {
     border-radius: 50px;
 }
 
-.img-fluid{
+.img-fluid {
     border-radius: 10px;
+}
+
+#mission-vision {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.content-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content-box:hover {
+    transform: scale(1.05);
+}
+
+
+.content-box {
+    color: #495057;
 }
