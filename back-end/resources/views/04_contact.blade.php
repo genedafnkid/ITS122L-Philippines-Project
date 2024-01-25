@@ -26,7 +26,7 @@
                                 <i class="fab fa-facebook fa-3x"></i> <!-- Adjust the font-size as needed -->
                             </a>
                         </div>
-                        <p class="text-center">You can also send us an email at contact@saveall.org</p>
+                        <p class="text-center">You can also send us an email at daycarlos28@yahoo.com</p>
                         
                         <form action="{{ route('submit_contact_form') }}" method="post">
                             @csrf <!-- Add this line to include CSRF token -->
