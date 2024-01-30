@@ -20,8 +20,6 @@ class Pet extends Model
         'color',
         'description',
         'display_image',
-        'registered_date',
-        'modified_date',
         'vaccine_name',
         'initial_vaccine_date',
         'booster_date',
@@ -30,7 +28,6 @@ class Pet extends Model
 
     protected $casts = [
         'birth_date' => 'date',
-        'registered_date' => 'datetime',
         'initial_vaccine_date' => 'date',
         'booster_date' => 'date',
         'expiration_vaccine_date' => 'date',

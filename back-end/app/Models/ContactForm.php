@@ -10,10 +10,7 @@ class ContactForm extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'email', 'phone_number', 'subject', 'message', 'submission_date',
+        'name', 'email', 'phone_number', 'subject', 'message', 
     ];
 
-    protected $casts = [
-        'submission_date' => 'datetime',
-    ];
 }

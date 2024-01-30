@@ -16,10 +16,8 @@ return new class extends Migration
             $table->longText('comment');
             $table->string('status');
             $table->dateTime('meet_date')->nullable();
-            $table->dateTime('submission_date');
             $table->dateTime('review_date')->nullable();
             $table->dateTime('results_date')->nullable();
-            $table->dateTime('modified_date')->nullable();
             $table->unsignedBigInteger('applicant_id');
             $table->unsignedBigInteger('pet_id');
             $table->timestamps();

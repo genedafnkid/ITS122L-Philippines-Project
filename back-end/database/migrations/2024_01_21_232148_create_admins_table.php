@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('last_name');
             $table->string('password');
             $table->string('display_image')->nullable();
-            $table->dateTime('registered_date');
             $table->dateTime('last_login_date')->nullable();
             $table->timestamps();
         });

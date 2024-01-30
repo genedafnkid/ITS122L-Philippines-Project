@@ -27,7 +27,6 @@ return new class extends Migration
             $table->longText('interests');
             $table->longText('previous_experience');
             $table->longText('additional_info');
-            $table->dateTime('submission_date');
             $table->timestamps();
         });
     }

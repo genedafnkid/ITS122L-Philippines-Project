@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('subject');
             $table->longText('message');
-            $table->dateTime('submission_date');
             $table->timestamps();
         });
     }
