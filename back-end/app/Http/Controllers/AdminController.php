@@ -32,7 +32,6 @@ class AdminController extends Controller
             'last_name' => 'required',
             'password' => 'required',
             'display_image' => 'nullable',
-            'registered_date' => 'required|date',
             'last_login_date' => 'nullable|date',
         ]);
 
@@ -53,7 +52,6 @@ class AdminController extends Controller
             'password' => 'required',
             'role' => 'required',
             'display_image' => 'nullable',
-            'registered_date' => 'required|date',
             'last_login_date' => 'nullable|date',
         ]);
 

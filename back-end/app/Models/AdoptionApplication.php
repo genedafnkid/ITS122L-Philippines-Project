@@ -23,10 +23,8 @@ class AdoptionApplication extends Model
 
     protected $casts = [
         'meet_date' => 'datetime',
-        'submission_date' => 'datetime',
         'review_date' => 'datetime',
         'results_date' => 'datetime',
-        'modified_date' => 'datetime',
     ];
 
     public function adopter()

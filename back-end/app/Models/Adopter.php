@@ -31,12 +31,10 @@ class Adopter extends Model
         'reasons_to_adopt',
         'pet_preferences',
         'display_image',
-        'registered_date',
     ];
 
     protected $casts = [
         'birth_date' => 'date',
-        'registered_date' => 'datetime',
     ];
 
     public function adoptionApplications()

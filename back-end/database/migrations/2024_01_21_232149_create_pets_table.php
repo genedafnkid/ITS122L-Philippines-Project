@@ -23,8 +23,6 @@ return new class extends Migration
             $table->string('color');
             $table->longText('description');
             $table->string('display_image')->nullable();
-            $table->dateTime('registered_date');
-            $table->dateTime('modified_date')->nullable();
             $table->string('vaccine_name')->nullable();
             $table->date('initial_vaccine_date')->nullable();
             $table->date('booster_date')->nullable();

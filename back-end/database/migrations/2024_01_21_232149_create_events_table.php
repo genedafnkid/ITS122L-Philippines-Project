@@ -15,12 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->dateTime('post_date');
             $table->string('event_type');
             $table->string('display_image')->nullable();
             $table->unsignedBigInteger('created_by');
-            $table->dateTime('created_date');
-            $table->dateTime('modified_date')->nullable();
             $table->timestamps();
 
             $table->foreign('created_by')->references('id')->on('admins');

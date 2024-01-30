@@ -25,10 +25,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('adoption-applications', AdoptionApplicationController::class);
-Route::resource('volunteers', VolunteerController::class);
-Route::resource('contact-forms', ContactFormController::class);
-Route::resource('events', EventController::class);
 
 
 //Routes for Admins
@@ -55,4 +51,34 @@ Route::post('/pets/create', [PetController::class, 'store']);
 Route::put('/pets/update/{id}', [PetController::class, 'update']);
 Route::delete('/pets/delete/{id}', [PetController::class, 'destroy']);
 
+// Routes for AdoptionApplication
+Route::resource('adoption-applications', AdoptionApplicationController::class);
+Route::get('/adoption-applications', [AdoptionApplicationController::class, 'index']);
+Route::get('/adoption-applications/{id}', [AdoptionApplicationController::class, 'show']);
+Route::post('/adoption-applications/create', [AdoptionApplicationController::class, 'store']);
+Route::put('/adoption-applications/update/{id}', [AdoptionApplicationController::class, 'update']);
+Route::delete('/adoption-applications/delete/{id}', [AdoptionApplicationController::class, 'destroy']);
 
+// Routes for ContactForm
+Route::resource('contact-forms', ContactFormController::class);
+Route::get('/contact-forms', [ContactFormController::class, 'index']);
+Route::get('/contact-forms/{id}', [ContactFormController::class, 'show']);
+Route::post('/contact-forms/create', [ContactFormController::class, 'store']);
+Route::put('/contact-forms/update/{id}', [ContactFormController::class, 'update']);
+Route::delete('/contact-forms/delete/{id}', [ContactFormController::class, 'destroy']);
+
+// Routes for Volunteers
+Route::resource('volunteers', VolunteerController::class);
+Route::get('/volunteers', [VolunteerController::class, 'index']);
+Route::get('/volunteers/{id}', [VolunteerController::class, 'show']);
+Route::post('/volunteers/create', [VolunteerController::class, 'store']);
+Route::put('/volunteers/update/{id}', [VolunteerController::class, 'update']);
+Route::delete('/volunteers/delete/{id}', [VolunteerController::class, 'destroy']);
+
+// Routes for Events
+Route::resource('events', EventController::class);
+Route::get('/events', [EventController::class, 'index']);
+Route::get('/events/{id}', [EventController::class, 'show']);
+Route::post('/events/create', [EventController::class, 'store']);
+Route::put('/events/update/{id}', [EventController::class, 'update']);
+Route::delete('/events/delete/{id}', [EventController::class, 'destroy']);

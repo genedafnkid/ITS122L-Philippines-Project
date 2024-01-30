@@ -34,7 +34,6 @@ return new class extends Migration
             $table->longText('reasons_to_adopt');
             $table->longText('pet_preferences');
             $table->string('display_image')->nullable();
-            $table->dateTime('registered_date');
             $table->timestamps();
         });
     }

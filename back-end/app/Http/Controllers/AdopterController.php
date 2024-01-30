@@ -46,7 +46,6 @@ class AdopterController extends Controller
             'reasons_to_adopt' => 'required',
             'pet_preferences' => 'required',
             'display_image' => 'nullable',
-            'registered_date' => 'required|date',
         ]);
 
         $adopter = Adopter::create($request->all());
@@ -80,7 +79,6 @@ class AdopterController extends Controller
             'reasons_to_adopt' => 'required',
             'pet_preferences' => 'required',
             'display_image' => 'nullable',
-            'registered_date' => 'required|date',
         ]);
 
         $adopter->update($request->all());
