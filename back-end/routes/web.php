@@ -44,3 +44,4 @@ Route::get('/login', function () {
 
 
 Route::post('/submit_contact_form', 'ContactController@submitForm')->name('submit_contact_form');
+Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');

@@ -43,7 +43,7 @@
                             Events
                         </a>
                         <div class="dropdown-menu" aria-labelledby="eventsDropdown">
-                            <a class="dropdown-item">Announcements</a>
+                            <a class="dropdown-item" >Announcements</a>
                             <a class="dropdown-item">Volunteering</a>
                             <a class="dropdown-item">Past Events</a>
                         </div>

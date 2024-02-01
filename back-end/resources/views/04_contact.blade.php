@@ -28,7 +28,7 @@
                         </div>
                         <p class="text-center">You can also send us an email at daycarlos28@yahoo.com</p>
                         
-                        <form action="{{ route('submit_contact_form') }}" method="post">
+                        <form action="{{ route('contact') }}" method="post">
                             @csrf <!-- Add this line to include CSRF token -->
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name:</label>
@@ -37,6 +37,14 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email:</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone_number" class="form-label">Phone Number:</label>
+                                <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject:</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Message:</label>
