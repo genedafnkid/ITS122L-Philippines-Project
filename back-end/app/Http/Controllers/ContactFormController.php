@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactForm;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -25,17 +26,29 @@ class ContactFormController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone_number' => 'required',
-            'subject' => 'required',
-            'message' => 'required',
-        ]);
+    
+        try {
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email',
+                'phone_number' => 'required',
+                'subject' => 'required',
+                'message' => 'required',
+            ]);
+    
+            $form = ContactForm::create($request->all());
+    
+            // success message
+            $message = 'Contact form submitted successfully';
+    
+            return view('04_contact', compact('message'));
+        } catch (\Exception $e) {
+            // error handler
+            $message = 'Contact form submission failed. Error: ' . $e->getMessage();
 
-        $form = ContactForm::create($request->all());
-
-        return response()->json(['contact_form' => $form], 201);
+            return view('04_contact', compact('message'));
+        }
+        
     }
 
     public function update(Request $request, $id)

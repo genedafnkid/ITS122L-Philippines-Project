@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,5 +44,4 @@ Route::get('/login', function () {
 })->name('login');
 
 
-Route::post('/submit_contact_form', 'ContactController@submitForm')->name('submit_contact_form');
-Route::post('/contact', [ContactFormController::class, 'store'])->name('contact.store');
+Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
