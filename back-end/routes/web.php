@@ -43,5 +43,21 @@ Route::get('/login', function () {
     return view('05_login');
 })->name('login');
 
+Route::get('/editprofile', function () {
+    return view('06_EditProfile');
+})->name('editprofile');
+
+Route::get('/newevent', function () {
+    return view('07_NewEvents');
+})->name('newevent');
+
+Route::get('/eventsdashboard', function () {
+    return view('08_EventsDashboard');
+})->name('eventsdashboard');
+
+Route::get('/editevent', function () {
+    return view('09_EditEvent');
+})->name('editevent');
+
 
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
