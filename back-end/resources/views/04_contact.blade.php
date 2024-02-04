@@ -13,8 +13,17 @@
 <body>
     @include('00_NAVBAR')
 
-    <!-- Contact Section -->
     <div class="container mt-5">
+    @if(isset($message))
+        <div id="successMessage" class="alert alert-success text-center" role="alert">
+            {{ $message }}
+        </div>
+        <script>
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        </script>
+    @endif
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
@@ -28,24 +37,39 @@
                         </div>
                         <p class="text-center">You can also send us an email at daycarlos28@yahoo.com</p>
                         
-                        <form action="{{ route('submit_contact_form') }}" method="post">
+                        <form action="{{ url('/contact-forms/create') }}" method="post">
                             @csrf <!-- Add this line to include CSRF token -->
+
                             <div class="mb-3">
-                                <label for="name" class="form-label">Name:</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <label for="subject" class="form-label">Subject:</label>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter the message's subject" required>
                             </div>
+
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <label for="name" class="form-label">Your Name:</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
                             </div>
+
                             <div class="mb-3">
-                                <label for="message" class="form-label">Message:</label>
-                                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                                <label for="email" class="form-label">Email Address:</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="phone_number" class="form-label">Contact Number:</label>
+                                <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Enter your contact number (+63)" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Message:</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message content" required></textarea>
+                            </div>
+
                             <div class="d-grid">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
