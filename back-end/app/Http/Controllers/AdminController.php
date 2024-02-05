@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class AdminController extends Controller
 {
@@ -66,5 +69,24 @@ class AdminController extends Controller
         $admin->delete();
 
         return response()->json(null, 204);
+    }
+
+    public function validateLogin(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+    
+        // Check if the email and password combination exists
+        $user = DB::table('admins')
+            ->where('email', $email)
+            ->where('password', $password) 
+            ->first();
+    
+        if ($user) {
+            // success
+            return view('05_login')->with('successMessage', 'Login successful!');
+        } else {
+            // failed
+            return view('05_login')->with('errorMessage', 'Invalid credentials');        }
     }
 }

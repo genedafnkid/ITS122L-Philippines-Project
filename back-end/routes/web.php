@@ -61,3 +61,7 @@ Route::get('/editevent', function () {
 
 
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
+
+// Login
+Route::post('/admins/login', [AdminController::class,'validateLogin'])->name('validateLogin');
+

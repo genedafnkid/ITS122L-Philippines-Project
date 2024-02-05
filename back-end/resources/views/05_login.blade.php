@@ -17,12 +17,21 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title text-center">Login</h2>
-                        <form action="{{ route('login') }}" method="post">
+                        <h2 class="card-title text-center">Admin Login</h2>
+                        @if(isset($successMessage))
+                            <script>
+                                alert('{{ $successMessage }}');
+                            </script>
+                        @elseif(isset($errorMessage))
+                            <script>
+                                alert('{{ $errorMessage }}');
+                            </script>
+                        @endif
+                        <form action="{{ route('validateLogin') }}" method="post" id="loginForm">
                             @csrf <!-- Add this line to include CSRF token -->
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username or Email:</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password:</label>
@@ -37,6 +46,7 @@
             </div>
         </div>
     </div>
+    
     
 </body>
 
