@@ -35,7 +35,7 @@
                                 <i class="fab fa-facebook fa-3x"></i> <!-- Adjust the font-size as needed -->
                             </a>
                         </div>
-                        <p class="text-center">You can also send us an email at daycarlos28@yahoo.com</p>
+                        <p class="text-center">You can also send us an email at daycarlos28@gmail.com</p>
                         
                         <form action="{{ url('/contact-forms/create') }}" method="post">
                             @csrf <!-- Add this line to include CSRF token -->
