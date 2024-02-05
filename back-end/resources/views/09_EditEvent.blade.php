@@ -43,7 +43,7 @@
 
                             <div class="row">
                                 <div class="col-sm-12 text-center">
-                                    <button class="btn btn-danger btn-lg my-3" style="min-width: 250px;">Delete</button>
+                                    <a href="{{ route('eventsdashboard') }}" class="btn btn-danger btn-lg my-3" style="min-width: 250px;">Delete</a>
                                     <button class="btn btn-primary btn-lg my-3" style="min-width: 250px;">Update</button>
                                 </div>
                             </div>

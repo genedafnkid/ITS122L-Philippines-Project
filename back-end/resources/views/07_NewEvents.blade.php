@@ -41,8 +41,11 @@
                                 <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
                             </div>
 
-                            <div class="mb-3 d-flex justify-content-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Create Event</button>
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+                                    <a href="{{ route('eventsdashboard') }}" class="btn btn-danger btn-lg my-3" style="min-width: 250px;">Cancel</a>
+                                    <button class="btn btn-primary btn-lg my-3" style="min-width: 250px;">Create Event</button>
+                                </div>
                             </div>
                         </form>
                     </div>
