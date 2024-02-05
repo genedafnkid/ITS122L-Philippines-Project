@@ -14,7 +14,12 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Edit Event</div>
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            Edit Event
+                            <a href="{{ route('eventsdashboard') }}" class="btn btn-secondary">Back</a>
+                        </div>
+                    </div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data">
@@ -44,10 +49,11 @@
                             <div class="row">
                                 <div class="col-sm-12 text-center">
                                     <button class="btn btn-danger btn-lg my-3" style="min-width: 250px;">Delete</button>
-                                    <button class="btn btn-primary btn-lg my-3" style="min-width: 250px;">Update</button>
+                                    <button class="btn btn-primary btn-lg my-3"
+                                        style="min-width: 250px;">Update</button>
                                 </div>
                             </div>
-                                                      
+
                         </form>
                     </div>
                 </div>
