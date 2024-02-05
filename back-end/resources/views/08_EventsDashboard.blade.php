@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         Events Dashboard
-                        <a href="#" class="btn btn-primary">Create Event</a>
+                        <a href="{{ route('newevent') }}" class="btn btn-primary">Create Event</a>
                     </div>
 
                     <div class="card-body">
@@ -35,7 +35,7 @@
                                         <td>WNDJSANJSADNSA</td>
                                         <td>WNDAJANASJDNSJA</td>
                                         <td>
-                                            <a href="#"
+                                            <a href="{{ route('editevent') }}"
                                                 class="btn btn-warning">Edit</a>
                                         </td>
                                     </tr>
