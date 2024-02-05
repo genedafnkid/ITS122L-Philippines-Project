@@ -43,6 +43,7 @@ class ContactFormController extends Controller
     
             return view('04_contact', compact('message'));
         } catch (\Exception $e) {
+            
             // error handler
             $message = 'Contact form submission failed. Error: ' . $e->getMessage();
 
