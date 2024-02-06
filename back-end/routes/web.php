@@ -43,9 +43,7 @@ Route::get('/login', function () {
     return view('05_login');
 })->name('login');
 
-Route::get('/editprofile', function () {
-    return view('06_EditProfile');
-})->name('editprofile');
+Route::get('/editprofile', [AdminController::class, 'showEditProfile'])->name('editprofile');
 
 Route::get('/newevent', function () {
     return view('07_NewEvents');
@@ -59,9 +57,12 @@ Route::get('/editevent', function () {
     return view('09_EditEvent');
 })->name('editevent');
 
-
+// Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
 // Login
 Route::post('/admins/login', [AdminController::class,'validateLogin'])->name('validateLogin');
+
+// Edit Profile
+Route::put('/admins/update/{id}', [AdminController::class, 'update'])->name('updateProfile');
 

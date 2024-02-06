@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\ValidationException;
+
 
 
 class AdminController extends Controller
@@ -45,22 +48,22 @@ class AdminController extends Controller
 
     public function update(Request $request, $id)
     {
+        
+            $request->validate([
+                'email' => 'required|email|unique:admins,email,' . $id,
+                'user_name' => 'required',
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'password' => 'required',
+                'role' => 'required',
+            ]);
+    
         $admin = Admin::findOrFail($id);
-
-        $request->validate([
-            'email' => 'required|email|unique:admins,email,' . $admin->id,
-            'user_name' => 'required',
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'password' => 'required',
-            'role' => 'required',
-            'display_image' => 'nullable',
-            'last_login_date' => 'nullable|date',
-        ]);
 
         $admin->update($request->all());
 
-        return response()->json(['admin' => $admin], 200);
+        return redirect()->route('editprofile')->with('message', 'Profile updated successfully');
+    
     }
 
     public function destroy($id)
@@ -71,6 +74,8 @@ class AdminController extends Controller
         return response()->json(null, 204);
     }
 
+
+    // Other methods
     public function validateLogin(Request $request)
     {
         $email = $request->input('email');
@@ -84,9 +89,22 @@ class AdminController extends Controller
     
         if ($user) {
             // success
+            Session::put('admin_id', $user->id); // Use this $adminId = Session::get('admin_id'); to access the ID in a controller
+
             return view('05_login')->with('successMessage', 'Login successful!');
         } else {
             // failed
-            return view('05_login')->with('errorMessage', 'Invalid credentials');        }
+            return view('05_login')->with('errorMessage', 'Login failed! Invalid credentials.');        }
     }
+
+    public function showEditProfile()
+    {
+        $adminId = Session::get('admin_id');
+    
+        $admin = DB::table('admins')->where('id', $adminId)->first();
+    
+        return view('06_EditProfile', ['admin' => $admin]);
+    }
+
+
 }
