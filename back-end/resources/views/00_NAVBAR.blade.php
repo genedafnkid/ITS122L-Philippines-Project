@@ -58,7 +58,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="volunteerDropdown">
                             <a class="dropdown-item" href="{{('petgallery')}}">Adopt</a>
-                            <a class="dropdown-item">Volunteer Form</a>
+                            <a class="dropdown-item" href={{('volunteer')}}>Volunteer Form</a>
                         </div>
                     </div>
                     @endunless

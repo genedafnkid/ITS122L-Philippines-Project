@@ -87,6 +87,14 @@ Route::get('/petinfo', function () {
     return view('13_PetInfo');
 })->name('petinfo');
 
+Route::get('/volunteer', function () {
+    return view('14_volunteer');
+})->name('volunteer');
+
+Route::get('/adopt', function () {
+    return view('15_adopt');
+})->name('adopt');
+
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
