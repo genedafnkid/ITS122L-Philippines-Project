@@ -50,6 +50,7 @@
                     <!-- End Events Dropdown -->
 
                     <!-- Volunteer Dropdown -->
+                    @unless(session('isAdminLoggedIn'))
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="volunteerDropdown" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,6 +61,7 @@
                             <a class="dropdown-item">Volunteer Form</a>
                         </div>
                     </div>
+                    @endunless
                     <!-- End Volunteer Dropdown -->
 
                     <!-- Admin Management Dropdown -->
@@ -70,8 +72,8 @@
                             ADMIN
                         </a>
                         <div class="dropdown-menu" aria-labelledby="volunteerDropdown">
+                        <a class="dropdown-item" href="{{ route('editprofile') }}">Manage Profile</a>
                             <a class="dropdown-item" href="{{ route('eventsdashboard') }}">Manage Events</a>
-                            <a class="dropdown-item">Manage Pets</a>
                             <a class="dropdown-item">View Adopt Applications</a>
                             <a class="dropdown-item">View Volunteer Applications</a>
                             <a class="dropdown-item">View Contact Submissions</a>
@@ -80,7 +82,9 @@
                     @endif
                     <!-- End Admin Management Dropdown -->
 
+                    @unless(session('isAdminLoggedIn'))
                     <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+                    @endunless
                 </div>
             </div>
 
