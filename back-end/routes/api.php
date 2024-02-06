@@ -34,6 +34,7 @@ Route::get('/admins/{id}', [AdminController::class, 'show']);
 Route::post('/admins/create', [AdminController::class, 'store']);
 Route::put('/admins/update/{id}', [AdminController::class, 'update']);
 Route::delete('/admins/delete/{id}', [AdminController::class, 'destroy']);
+Route::post('/admins/login', [AdminController::class,'validateLogin']);
 
 // Routes for Adopters
 Route::resource('adopters', AdopterController::class);

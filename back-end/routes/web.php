@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,5 +43,46 @@ Route::get('/login', function () {
     return view('05_login');
 })->name('login');
 
+Route::get('/editprofile', [AdminController::class, 'showEditProfile'])->name('editprofile');
 
-Route::post('/submit_contact_form', 'ContactController@submitForm')->name('submit_contact_form');
+Route::get('/newevent', function () {
+    return view('07_NewEvents');
+})->name('newevent');
+
+Route::get('/eventsdashboard', function () {
+    return view('08_EventsDashboard');
+})->name('eventsdashboard');
+
+Route::get('/editevent', function () {
+    return view('09_EditEvent');
+})->name('editevent');
+
+Route::get('/volunteerdashboard', function () {
+    return view('10_VolunteerDashboard');
+})->name('volunteerdashboard');
+
+Route::get('/adoptersdashboard', function () {
+    return view('11_AdoptersDashboard');
+})->name('adoptersdashboard');
+
+Route::get('/petgallery', function () {
+    return view('12_PetGallery');
+})->name('petgallery');
+
+Route::get('/petinfo', function () {
+    return view('13_PetInfo');
+})->name('petinfo');
+
+// Contact form
+Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
+
+// Login
+Route::post('/admins/login', [AdminController::class,'validateLogin'])->name('validateLogin');
+Route::get('/admins/logout', [AdminController::class,'logout'])->name('logout');
+
+
+// Edit Profile
+Route::put('/admins/update/{id}', [AdminController::class, 'update'])->name('updateProfile');
+
+Route::get('/petinfo/{id}', [PetController::class, 'showInfo'])->name('pet.info');
+
