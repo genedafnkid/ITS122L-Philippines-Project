@@ -57,6 +57,14 @@ Route::get('/editevent', function () {
     return view('09_EditEvent');
 })->name('editevent');
 
+Route::get('/volunteerdashboard', function () {
+    return view('10_VolunteerDashboard');
+})->name('volunteerdashboard');
+
+Route::get('/adoptersdashboard', function () {
+    return view('11_AdoptersDashboard');
+})->name('adoptersdashboard');
+
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
