@@ -65,6 +65,14 @@ Route::get('/adoptersdashboard', function () {
     return view('11_AdoptersDashboard');
 })->name('adoptersdashboard');
 
+Route::get('/petgallery', function () {
+    return view('12_PetGallery');
+})->name('petgallery');
+
+Route::get('/petinfo', function () {
+    return view('13_PetInfo');
+})->name('petinfo');
+
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
@@ -75,4 +83,6 @@ Route::get('/admins/logout', [AdminController::class,'logout'])->name('logout');
 
 // Edit Profile
 Route::put('/admins/update/{id}', [AdminController::class, 'update'])->name('updateProfile');
+
+Route::get('/petinfo/{id}', [PetController::class, 'showInfo'])->name('pet.info');
 
