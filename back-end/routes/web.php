@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\volunteerFormController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -80,6 +81,10 @@ Route::get('/adopt', function () {
     return view('15_adopt');
 })->name('adopt');
 
+Route::get('/volunteerform', function () {
+    return view('volunteerForm');
+})->name('volunteerform');
+
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
@@ -98,3 +103,7 @@ Route::put('/events/update/{id}', [EventController::class, 'update'])->name('upd
 
 // Delete event
 Route::delete('events/delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');
+
+// Volunteer form submission
+Route::post('/volunteerForm-forms/create', [VolunteerFormController::class, 'store'])->name('submit_volunteer_form');
+
