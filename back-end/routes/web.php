@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\volunteerFormController;
+use App\Http\Controllers\PetInformationController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -85,6 +87,16 @@ Route::get('/volunteerform', function () {
     return view('volunteerForm');
 })->name('volunteerform');
 
+Route::get('/petInformation', function () {
+    return view('petInformation');
+})->name('petInformation');
+
+Route::get('/adoptForm', function () {
+    return view('adoptForm');
+})->name('adoptForm');
+
+
+
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
@@ -104,6 +116,13 @@ Route::put('/events/update/{id}', [EventController::class, 'update'])->name('upd
 // Delete event
 Route::delete('events/delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');
 
-// Volunteer form submission
+// Volunteer Form
 Route::post('/volunteerForm-forms/create', [VolunteerFormController::class, 'store'])->name('submit_volunteer_form');
+
+//Pet Information
+Route::post('/petInformation-forms/create', [PetInformationController::class, 'store'])->name('pet.information.form.create');
+
+
+
+
 
