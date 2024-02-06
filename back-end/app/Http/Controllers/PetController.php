@@ -80,4 +80,18 @@ class PetController extends Controller
         return response()->json(null, 204);
     }
 
+    public function showInfo($id)
+    {
+        $pet = Pet::findOrFail($id);
+
+        // Pass the data to the view
+        return view('petinfo', [
+            'petPhotoPath' => asset("/assets/images/adopt{$id}.jpg"),
+            'petName' => $pet->name,
+            'petDescription' => $pet->description,
+            'petStatus' => $pet->adoption_status,
+            'petAge' => $pet->age,
+        ]);
+
+    }
 }
