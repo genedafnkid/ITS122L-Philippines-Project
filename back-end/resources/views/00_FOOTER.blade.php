@@ -1,4 +1,3 @@
-<!-- index.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save ALL</title>
+    <style>
+        
+
+        .container {
+            min-height:70%; /* Ensure container takes up at least the full height of its parent (body) */
+        }
+
+        /* Additional styles as needed */
+    </style>
 </head>
 
 <body>
