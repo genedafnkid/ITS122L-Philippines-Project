@@ -57,6 +57,10 @@ Route::get('/editevent', function () {
     return view('09_EditEvent');
 })->name('editevent');
 
+Route::get('/adoption', function () {
+    return view('10_Adoption');
+})->name('adoption');
+
 Route::get('/volunteerdashboard', function () {
     return view('10_VolunteerDashboard');
 })->name('volunteerdashboard');
