@@ -62,6 +62,8 @@ Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->n
 
 // Login
 Route::post('/admins/login', [AdminController::class,'validateLogin'])->name('validateLogin');
+Route::get('/admins/logout', [AdminController::class,'logout'])->name('logout');
+
 
 // Edit Profile
 Route::put('/admins/update/{id}', [AdminController::class, 'update'])->name('updateProfile');

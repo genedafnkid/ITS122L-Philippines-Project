@@ -69,7 +69,7 @@
     @include('00_FOOTER')
     <script>
         function showSuccessAlert() {
-            alert('Update successful!');
+            alert('Profile update successful!');
         }
     </script>
 </body>

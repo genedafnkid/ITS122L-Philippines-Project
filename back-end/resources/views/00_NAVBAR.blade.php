@@ -45,7 +45,6 @@
                         <div class="dropdown-menu" aria-labelledby="eventsDropdown">
                             <a class="dropdown-item" >Announcements</a>
                             <a class="dropdown-item">Volunteering</a>
-                            <a class="dropdown-item">Past Events</a>
                         </div>
                     </div>
                     <!-- End Events Dropdown -->
@@ -63,14 +62,36 @@
                     </div>
                     <!-- End Volunteer Dropdown -->
 
+                    <!-- Admin Management Dropdown -->
+                    @if(session('isAdminLoggedIn'))
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="managementDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ADMIN
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="volunteerDropdown">
+                            <a class="dropdown-item" href="{{ route('eventsdashboard') }}">Manage Events</a>
+                            <a class="dropdown-item">Manage Pets</a>
+                            <a class="dropdown-item">View Adopt Applications</a>
+                            <a class="dropdown-item">View Volunteer Applications</a>
+                            <a class="dropdown-item">View Contact Submissions</a>
+                        </div>
+                    </div>
+                    @endif
+                    <!-- End Admin Management Dropdown -->
+
                     <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                 </div>
             </div>
 
             <!-- Left Side: Placeholder Image -->
+            
             <div class="navbar-brand">
-                <a class="btn btn-primary" id="login" href="{{ route('login')}}">LOG IN</a>
+                @unless(session('isAdminLoggedIn'))<a class="btn btn-primary" id="login" href="{{ route('login')}}">LOG IN</a>@endunless
+                @if(session('isAdminLoggedIn'))<a class="btn btn-primary" id="logout" href="{{ route('logout')}}">LOG OUT</a> @endif
             </div>
+            
+           
             
         </div>
     </nav>

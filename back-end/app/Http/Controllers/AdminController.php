@@ -89,12 +89,21 @@ class AdminController extends Controller
     
         if ($user) {
             // success
+            Session::put('isAdminLoggedIn', true);
             Session::put('admin_id', $user->id); // Use this $adminId = Session::get('admin_id'); to access the ID in a controller
 
-            return view('05_login')->with('successMessage', 'Login successful!');
+            return redirect()->route('home');
         } else {
             // failed
             return view('05_login')->with('errorMessage', 'Login failed! Invalid credentials.');        }
+    }
+
+    public function logout()
+    {
+        Session::forget('isAdminLoggedIn');
+        Session::forget('admin_id');
+    
+        return redirect()->route('home');
     }
 
     public function showEditProfile()
