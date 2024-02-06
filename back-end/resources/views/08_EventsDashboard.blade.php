@@ -24,21 +24,33 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Title</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">Post Date</th>
+                                    <th scope="col">Type</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($events as $event)
                                     <tr>
-                                        <td>DNJWNJSANDSAJDNJKSA</td>
-                                        <td>WNDJSANJSADNSA</td>
-                                        <td>WNDAJANASJDNSJA</td>
+                                        <td>{{ $event->title }}</td></td>
+                                        <td>{{ $event->created_at->format('Y-m-d') }}</td>
+                                        <td>{{ $event->event_type }}</td>
                                         <td>
-                                            <a href="{{ route('editevent') }}"
+                                            <a href="{{ route('09_editevent', ['id' => $event->id]) }}"
                                                 class="btn btn-warning">Edit</a>
+                                                <a href="{{ route('deleteEvent', ['id' => $event->id]) }}" 
+                                                class="btn btn-danger" 
+                                                onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this event?')) { document.getElementById('delete-form-{{$event->id}}').submit(); }">
+                                                Delete
+                                                </a>
+                                                <form id="delete-form-{{$event->id}}" action="{{ route('deleteEvent', ['id' => $event->id]) }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
+                                            
                                         </td>
                                     </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

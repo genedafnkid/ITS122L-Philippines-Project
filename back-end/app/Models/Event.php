@@ -11,11 +11,7 @@ class Event extends Model
 
     protected $fillable = [
         'title', 'description', 'event_type',
-        'display_image', 'created_by',
+        'display_image', 
     ];
 
-    public function admin()
-    {
-        return $this->belongsTo(Admin::class, 'created_by');
-    }
 }

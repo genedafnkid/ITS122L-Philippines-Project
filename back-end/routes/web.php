@@ -49,13 +49,11 @@ Route::get('/newevent', function () {
     return view('07_NewEvents');
 })->name('newevent');
 
-Route::get('/eventsdashboard', function () {
-    return view('08_EventsDashboard');
-})->name('eventsdashboard');
+Route::get('/eventsdashboard', [EventController::class, 'index'])->name('eventsdashboard');
 
-Route::get('/editevent', function () {
-    return view('09_EditEvent');
-})->name('editevent');
+Route::get('/editevent/{id}', [EventController::class, 'showEditEvent'])->name('09_editevent');
+
+
 
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
@@ -64,7 +62,14 @@ Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->n
 Route::post('/admins/login', [AdminController::class,'validateLogin'])->name('validateLogin');
 Route::get('/admins/logout', [AdminController::class,'logout'])->name('logout');
 
-
 // Edit Profile
 Route::put('/admins/update/{id}', [AdminController::class, 'update'])->name('updateProfile');
 
+// Add event
+Route::post('/events/create', [EventController::class, 'store'])->name('events.store');
+
+// Edit event
+Route::put('/events/update/{id}', [EventController::class, 'update'])->name('updateEvent');
+
+// Delete event
+Route::delete('events/delete/{id}', [EventController::class, 'destroy'])->name('deleteEvent');

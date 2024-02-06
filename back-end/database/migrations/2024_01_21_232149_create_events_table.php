@@ -17,10 +17,8 @@ return new class extends Migration
             $table->longText('description');
             $table->string('event_type');
             $table->string('display_image')->nullable();
-            $table->unsignedBigInteger('created_by');
             $table->timestamps();
 
-            $table->foreign('created_by')->references('id')->on('admins');
         });
     }
 

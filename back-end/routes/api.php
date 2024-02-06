@@ -44,21 +44,6 @@ Route::post('/adopters/create', [AdopterController::class, 'store']);
 Route::put('/adopters/update/{id}', [AdopterController::class, 'update']);
 Route::delete('/adopters/delete/{id}', [AdopterController::class, 'destroy']);
 
-// Routes for Pets
-Route::resource('pets', PetController::class);
-Route::get('/pets', [PetController::class, 'index']);
-Route::get('/pets/{id}', [PetController::class, 'show']);
-Route::post('/pets/create', [PetController::class, 'store']);
-Route::put('/pets/update/{id}', [PetController::class, 'update']);
-Route::delete('/pets/delete/{id}', [PetController::class, 'destroy']);
-
-// Routes for AdoptionApplication
-Route::resource('adoption-applications', AdoptionApplicationController::class);
-Route::get('/adoption-applications', [AdoptionApplicationController::class, 'index']);
-Route::get('/adoption-applications/{id}', [AdoptionApplicationController::class, 'show']);
-Route::post('/adoption-applications/create', [AdoptionApplicationController::class, 'store']);
-Route::put('/adoption-applications/update/{id}', [AdoptionApplicationController::class, 'update']);
-Route::delete('/adoption-applications/delete/{id}', [AdoptionApplicationController::class, 'destroy']);
 
 // Routes for ContactForm
 Route::resource('contact-forms', ContactFormController::class);

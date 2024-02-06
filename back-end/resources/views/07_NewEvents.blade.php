@@ -32,9 +32,13 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="event_date" class="form-label">Event Date</label>
-                                <input type="date" class="form-control" id="event_date" name="event_date" required>
+                                <label for="event_type" class="form-label">Event Type</label>
+                                <select class="form-control" id="event_type" name="event_type" required>
+                                    <option value="Announcement">Announcement</option>
+                                    <option value="Volunteering">Volunteering</option>
+                                </select>
                             </div>
+
 
                             <div class="mb-3">
                                 <label for="description" class="form-label">Event Description</label>
@@ -44,7 +48,7 @@
                             <div class="row">
                                 <div class="col-sm-12 text-center">
                                     <a href="{{ route('eventsdashboard') }}" class="btn btn-danger btn-lg my-3" style="min-width: 250px;">Cancel</a>
-                                    <button class="btn btn-primary btn-lg my-3" style="min-width: 250px;">Create Event</button>
+                                    <button class="btn btn-primary btn-lg my-3" style="min-width: 250px;" onclick="showSuccessAlert()">Create Event</button>
                                 </div>
                             </div>
                         </form>
@@ -55,6 +59,11 @@
     </div>
 
     @include('00_FOOTER')
+    <script>
+        function showSuccessAlert() {
+            alert('Event added successful!');
+        }
+    </script>
 </body>
 
 </html>
