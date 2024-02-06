@@ -25,7 +25,7 @@
                                         <img src="{{ asset('/assets/images/adopt' . $i . '.jpg') }}" class="card-img-top" alt="Cat {{$i}}">
                                         <div class="card-body">
                                             <h5 class="card-title">Pet ID: 000{{$i}}</h5>
-                                            <a href="{{ url('petinfo')}}" class="btn btn-primary btl-lg">INFO</a>
+                                            <a href="{{ url('adopt')}}" class="btn btn-primary btl-lg">ADOPT</a>
                                         </div>
                                     </div>
                                 </div>

@@ -125,3 +125,20 @@ input{
 .bank-info p, h3{
     font-size: large;
 }
+
+
+#experienceSkills {
+    height: 100px; 
+   
+}
+
+#volunteer {
+    background-color: #f8f9fa;
+    padding: 2%;
+    border-radius: 5%;
+}
+  
+.center-container {
+    max-width: 800px; 
+    margin: 0 auto;
+}
