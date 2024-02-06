@@ -80,6 +80,22 @@ Route::get('/adopt', function () {
     return view('15_adopt');
 })->name('adopt');
 
+Route::get('/announcements', function () {
+    return view('16_announcements');
+})->name('announcements');
+
+Route::get('/volunteering', function () {
+    return view('17_volunteering');
+})->name('volunteering');
+
+Route::get('/viewAnnouncement', function () {
+    return view('18_viewAnnouncement');
+})->name('viewannouncement');
+
+Route::get('/viewVolunteering', function () {
+    return view('19_viewVolunteering');
+})->name('viewVolunteering');
+
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
