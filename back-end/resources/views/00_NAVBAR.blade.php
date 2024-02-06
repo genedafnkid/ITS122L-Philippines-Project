@@ -43,8 +43,8 @@
                             Events
                         </a>
                         <div class="dropdown-menu" aria-labelledby="eventsDropdown">
-                            <a class="dropdown-item" >Announcements</a>
-                            <a class="dropdown-item" href="{{ route('volunteerform') }}">Volunteering</a>
+                            <a class="dropdown-item" href="{{'announcements'}}" >Announcements</a>
+                            <a class="dropdown-item" href="{{'volunteering'}}">Volunteering</a>
                         </div>
                     </div>
                     <!-- End Events Dropdown -->
