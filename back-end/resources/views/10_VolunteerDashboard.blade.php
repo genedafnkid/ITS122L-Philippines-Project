@@ -17,36 +17,30 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         Volunteer Dashboard
-                        <select id="statusDropdown">
-                            <option value="" disabled selected>Filter Status</option>
-                            <option value="pending">Pending</option>
-                            <option value="approved">Approved</option>
-                            <option value="rejected">Rejected</option>
-                            <!-- Add more status options as needed -->
-                        </select>
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Status</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Date</th>
+                                    <th scope="col">Phone Number</th>
+                                    <th scope="col">Submission Date</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($volunteers as $volunteer)
                                 <tr>
-                                    <td>DNJWNJSANDSAJDNJKSA</td>
-                                    <td>WNDJSANJSADNSA</td>
-                                    <td>WNDAJANASJDNSJA</td>
-                                    <td>12-08-23</td>
+                                    <td>{{ $volunteer->first_name }} {{ $volunteer->last_name }}</td>
+                                    <td>{{ $volunteer->email }}</td>
+                                    <td>{{ $volunteer->phone_number }}</td>
+                                    <td>{{ $volunteer->created_at }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-warning">Edit</a>
+                                    <a href="{{ route('20_adminVolunteerForm', ['id' => $volunteer->id]) }}" class="btn btn-warning">View</a>
                                     </td>
                                 </tr>
-                                <!-- Add more table rows as needed -->
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

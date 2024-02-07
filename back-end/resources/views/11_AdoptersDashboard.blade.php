@@ -17,36 +17,30 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         Adopters Dashboard
-                        <select id="statusDropdown">
-                            <option value="" disabled selected>Filter Status</option>
-                            <option value="pending">Pending</option>
-                            <option value="approved">Approved</option>
-                            <option value="rejected">Rejected</option>
-                            <!-- Add more status options as needed -->
-                        </select>
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Status</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Description</th>
+                                    <th scope="col">Phone Number</th>
+                                    <th scope="col">Submission Date</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($adopters as $adopter)
                                 <tr>
-                                    <td>DNJWNJSANDSAJDNJKSA</td>
-                                    <td>WNDJSANJSADNSA</td>
-                                    <td>WNDAJANASJDNSJA</td>
-                                    <td>WNDAJANASJDNSJA</td>
+                                    <td>{{ $adopter->first_name }} {{ $adopter->last_name }}</td>
+                                    <td>{{ $adopter->email }}</td>
+                                    <td>{{ $adopter->phone_number }}</td>
+                                    <td>{{ $adopter->created_at }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-warning">Edit</a>
+                                        <a href="{{ route('21_adminAdopterForm', ['id' => $adopter->id]) }}" class="btn btn-warning">View</a>
                                     </td>
                                 </tr>
-                                <!-- Add more table rows as needed -->
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -12,7 +12,12 @@ class VolunteerController extends Controller
     {
         $volunteers = Volunteer::all();
 
-        return response()->json(['volunteers' => $volunteers], 200);
+        return view('10_VolunteerDashboard', compact('volunteers'));
+    }
+
+    public function showVolunteerDetails($id){
+        $volunteer = Volunteer::findOrFail($id);
+        return view('20_adminVolunteerForm', compact('volunteer'));
     }
 
     public function show($id)

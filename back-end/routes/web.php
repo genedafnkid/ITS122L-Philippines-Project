@@ -55,13 +55,9 @@ Route::get('/editevent/{id}', [EventController::class, 'showEditEvent'])->name('
 
 
 
-Route::get('/volunteerdashboard', function () {
-    return view('10_VolunteerDashboard');
-})->name('volunteerdashboard');
+Route::get('/volunteerdashboard', [VolunteerController::class, 'index'])->name('volunteersdashboard');
 
-Route::get('/adoptersdashboard', function () {
-    return view('11_AdoptersDashboard');
-})->name('adoptersdashboard');
+Route::get('/adoptersdashboard', [AdopterController::class, 'index'])->name('adoptersdashboard');
 
 Route::get('/petgallery', function () {
     return view('12_PetGallery');
@@ -89,13 +85,9 @@ Route::get('/viewAnnouncement/{id}', [EventController::class, 'displayAnnounceme
 Route::get('/viewVolunteering/{id}', [EventController::class, 'displayVolunteeringById'])->name('viewVolunteering');
 
 
-Route::get('/adminVolunteerForm', function () {
-    return view('20_adminVolunteerForm');
-})->name('adminVolunteerForm');
+Route::get('/adminVolunteerForm/{id}', [VolunteerController::class, 'showVolunteerDetails'])->name('20_adminVolunteerForm');
 
-Route::get('/adminAdopterForm', function () {
-    return view('21_adminAdopterForm');
-})->name('adminAdopterForm');
+Route::get('/adminAdopterForm/{id}', [AdopterController::class, 'showAdopterDetails'])->name('21_adminAdopterForm');
 
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');

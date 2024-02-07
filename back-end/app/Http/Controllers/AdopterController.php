@@ -12,7 +12,12 @@ class AdopterController extends Controller
     {
         $adopters = Adopter::all();
 
-        return response()->json(['adopters' => $adopters], 200);
+        return view('11_AdoptersDashboard', compact('adopters'));
+    }
+
+    public function showAdopterDetails($id){
+        $adopter = Adopter::findOrFail($id);
+        return view('21_adminAdopterForm', compact('adopter'));
     }
 
     public function show($id)
