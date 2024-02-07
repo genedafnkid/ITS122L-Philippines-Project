@@ -89,6 +89,11 @@ Route::get('/adminVolunteerForm/{id}', [VolunteerController::class, 'showVolunte
 
 Route::get('/adminAdopterForm/{id}', [AdopterController::class, 'showAdopterDetails'])->name('21_adminAdopterForm');
 
+Route::get('/contactformsdashboard', [ContactFormController::class, 'index'])->name('contactformsdashboard');
+
+Route::get('/adminContactForm/{id}', [ContactFormController::class, 'showContactFormDetails'])->name('23_adminContactForm');
+
+
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 

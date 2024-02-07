@@ -14,7 +14,12 @@ class ContactFormController extends Controller
     {
         $forms = ContactForm::all();
 
-        return response()->json(['contact_forms' => $forms], 200);
+        return view('22_ContactsDashboard', compact('forms'));
+    }
+
+    public function showContactFormDetails($id){
+        $form = ContactForm::findOrFail($id);
+        return view('23_adminContactForm', compact('form'));
     }
 
     public function show($id)

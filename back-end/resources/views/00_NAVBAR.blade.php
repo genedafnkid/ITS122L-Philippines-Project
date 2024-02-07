@@ -76,7 +76,7 @@
                             <a class="dropdown-item" href="{{ route('eventsdashboard') }}">Manage Events</a>
                             <a class="dropdown-item" href="{{ route('adoptersdashboard') }}">View Adopt Applications</a>
                             <a class="dropdown-item" href="{{ route('volunteersdashboard') }}">View Volunteer Applications</a>
-                            <a class="dropdown-item" href="">View Contact Submissions</a>
+                            <a class="dropdown-item" href="{{ route('contactformsdashboard') }}">View Contact Submissions</a>
                         </div>
                     </div>
                     @endif
