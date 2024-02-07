@@ -96,6 +96,18 @@ Route::get('/viewVolunteering', function () {
     return view('19_viewVolunteering');
 })->name('viewVolunteering');
 
+Route::get('/viewVolunteering', function () {
+    return view('19_viewVolunteering');
+})->name('viewVolunteering');
+
+Route::get('/adminVolunteerForm', function () {
+    return view('20_adminVolunteerForm');
+})->name('adminVolunteerForm');
+
+Route::get('/adminAdopterForm', function () {
+    return view('21_adminAdopterForm');
+})->name('adminAdopterForm');
+
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
