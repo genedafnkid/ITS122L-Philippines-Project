@@ -36,9 +36,4 @@ class Adopter extends Model
     protected $casts = [
         'birth_date' => 'date',
     ];
-
-    public function adoptionApplications()
-    {
-        return $this->hasMany(AdoptionApplication::class, 'applicant_id');
-    }
 }

@@ -24,6 +24,7 @@ class VolunteerController extends Controller
 
     public function store(Request $request)
     {
+        try {
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
@@ -43,7 +44,16 @@ class VolunteerController extends Controller
 
         $volunteer = Volunteer::create($request->all());
 
-        return response()->json(['volunteer' => $volunteer], 201);
+        $message = 'Volunteer form submitted successfully';
+
+    } catch (\Exception $e) {
+        $message = 'Volunteer form submission failed. Error: ' . $e->getMessage();
+
+    
+    }
+
+
+        return view('14_volunteer', compact('message'));
     }
 
     public function update(Request $request, $id)

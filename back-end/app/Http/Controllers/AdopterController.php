@@ -24,6 +24,7 @@ class AdopterController extends Controller
 
     public function store(Request $request)
     {
+        try{
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
@@ -50,7 +51,16 @@ class AdopterController extends Controller
 
         $adopter = Adopter::create($request->all());
 
-        return response()->json(['adopter' => $adopter], 201);
+        $message = 'Adoption form submitted successfully';
+    } catch (\Exception $e) {
+        $message = 'Adoption form submission failed. Error: ' . $e->getMessage();
+
+    }
+
+
+        return view('15_adopt', compact('message'));
+
+
     }
 
     public function update(Request $request, $id)

@@ -100,6 +100,12 @@ Route::get('/adminAdopterForm', function () {
 // Contact form
 Route::post('/contact-forms/create', [ContactFormController::class, 'store'])->name('submit_contact_form');
 
+// Volunteer form
+Route::post('/volunteers/create', [VolunteerController::class, 'store'])->name('submit_volunteer_form');
+
+// Adoption form
+Route::post('/adopters/create', [AdopterController::class, 'store'])->name('submit_adoption_form');
+
 // Login
 Route::post('/admins/login', [AdminController::class,'validateLogin'])->name('validateLogin');
 Route::get('/admins/logout', [AdminController::class,'logout'])->name('logout');
