@@ -58,8 +58,6 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="volunteerDropdown">
                             <a class="dropdown-item" href="{{('petgallery')}}">Adopt</a>
-                            <a class="dropdown-item" >Adoption Form</a>
-                            <a class="dropdown-item" href="{{ route('petInformation') }}">Pet Information</a>
                             <a class="dropdown-item" href={{('volunteer')}}>Volunteer Form</a>
                         </div>
                     </div>
