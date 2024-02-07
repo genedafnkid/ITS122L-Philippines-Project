@@ -43,8 +43,8 @@
                             Events
                         </a>
                         <div class="dropdown-menu" aria-labelledby="eventsDropdown">
-                            <a class="dropdown-item" href="{{'announcements'}}" >Announcements</a>
-                            <a class="dropdown-item" href="{{'volunteering'}}">Volunteering</a>
+                            <a class="dropdown-item" href="{{route('16_announcements')}}" >Announcements</a>
+                            <a class="dropdown-item" href="{{route('17_volunteering')}}">Volunteering</a>
                         </div>
                     </div>
                     <!-- End Events Dropdown -->
@@ -57,8 +57,8 @@
                             Volunteer
                         </a>
                         <div class="dropdown-menu" aria-labelledby="volunteerDropdown">
-                            <a class="dropdown-item" href="{{('petgallery')}}">Adopt</a>
-                            <a class="dropdown-item" href={{('volunteer')}}>Volunteer Form</a>
+                            <a class="dropdown-item" href="{{ route('petgallery') }}">Adopt</a>
+                            <a class="dropdown-item" href="{{ route('volunteer') }}">Volunteer Form</a>
                         </div>
                     </div>
                     @endunless

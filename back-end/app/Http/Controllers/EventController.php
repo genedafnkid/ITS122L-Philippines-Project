@@ -12,11 +12,37 @@ use Illuminate\Validation\ValidationException;
 
 class EventController extends Controller
 {
-    public function index()
+    public function eventsDashboardPopulate()
     {
         $events = Event::all();
 
         return view('08_EventsDashboard', compact('events'));
+    }
+
+    public function displayAnnouncements()
+    {
+        $events = Event::all();
+
+        return view('16_announcements', compact('events'));
+    }
+
+    public function displayAnnouncementById($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('18_viewAnnouncement', compact('event'));
+    }
+
+    public function displayVolunteerings()
+    {
+        $events = Event::all();
+
+        return view('17_volunteering', compact('events'));
+    }
+
+    public function displayVolunteeringById($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('19_viewVolunteering', compact('event'));
     }
 
     public function show($id)

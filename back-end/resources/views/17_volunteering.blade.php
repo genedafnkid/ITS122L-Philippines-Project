@@ -18,28 +18,21 @@
                         Volunteering
                     </div>
                     <div class="card-body">
+                    @foreach($events as $event)
+                        @if($event->event_type === 'Volunteering')
                         <div class="row">
                             <div class="col-md-3">
-                                <img src="{{ asset('/assets/images/adopt1.jpg') }}" alt="Announcement Photo" class="img-fluid">
+                                <img src="{{ asset($event->display_image) }}" alt="Announcement Photo" class="img-fluid">
                             </div>
                             <div class="col-md-9">
-                                <h5>Important Announcement</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta?</p>
-                                <a href="{{('viewVolunteering')}}" class="btn btn-primary btn-lg">See Details</a>
+                                <h5>{{ $event->title }}</h5>
+                                <p>{{ Illuminate\Support\Str::limit($event->description, 200, $end='...') }}</p>
+                                <a href="{{route('viewVolunteering', $event->id)}}" class="btn btn-primary btn-lg">See Details</a>
                             </div>
                         </div>
                         <hr>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="{{ asset('/assets/images/adopt1.jpg') }}"  alt="Announcement Photo" class="img-fluid">
-                            </div>
-                            <div class="col-md-9">
-                                <h5>Upcoming Event</h5>
-                                <p>Et hunc quidem intellegete in philosophum prima lanx forte devolvamur. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers?</p>
-                                <a href="{{('viewVolunteering')}}" class="btn btn-primary btn-lg">See Details</a>
-                            </div>
-                            
-                        </div>
+                        @endif
+                    @endforeach
                     </div>
                 </div>
             </div>

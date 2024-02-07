@@ -49,7 +49,7 @@ Route::get('/newevent', function () {
     return view('07_NewEvents');
 })->name('newevent');
 
-Route::get('/eventsdashboard', [EventController::class, 'index'])->name('eventsdashboard');
+Route::get('/eventsdashboard', [EventController::class, 'eventsDashboardPopulate'])->name('eventsdashboard');
 
 Route::get('/editevent/{id}', [EventController::class, 'showEditEvent'])->name('09_editevent');
 
@@ -80,25 +80,14 @@ Route::get('/adopt', function () {
     return view('15_adopt');
 })->name('adopt');
 
-Route::get('/announcements', function () {
-    return view('16_announcements');
-})->name('announcements');
+Route::get('/announcements', [EventController::class, 'displayAnnouncements'])->name('16_announcements');
 
-Route::get('/volunteering', function () {
-    return view('17_volunteering');
-})->name('volunteering');
+Route::get('/volunteering', [EventController::class, 'displayVolunteerings'])->name('17_volunteering');
 
-Route::get('/viewAnnouncement', function () {
-    return view('18_viewAnnouncement');
-})->name('viewannouncement');
+Route::get('/viewAnnouncement/{id}', [EventController::class, 'displayAnnouncementById'])->name('viewAnnouncement');
 
-Route::get('/viewVolunteering', function () {
-    return view('19_viewVolunteering');
-})->name('viewVolunteering');
+Route::get('/viewVolunteering/{id}', [EventController::class, 'displayVolunteeringById'])->name('viewVolunteering');
 
-Route::get('/viewVolunteering', function () {
-    return view('19_viewVolunteering');
-})->name('viewVolunteering');
 
 Route::get('/adminVolunteerForm', function () {
     return view('20_adminVolunteerForm');

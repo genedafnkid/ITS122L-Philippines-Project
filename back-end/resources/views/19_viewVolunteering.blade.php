@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteering Details </title>
+    <title>Volunteering Details</title>
 </head>
 
 <body>
@@ -18,11 +18,10 @@
                         Volunteering Details
                     </div>
                     <div class="card-body">
-                        <img src="path/to/photo.jpg" alt="Announcement Photo" class="img-fluid mb-3">
-                        <h5 class="card-title">Important Announcement</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne
-                            merninisti licere mihi ista probare, quae sunt a te dicta?</p>
-                        <a href="{{('volunteer')}}"  class="btn btn-primary btn-lg mx-auto">See Details</a>
+                        <img src="{{ asset($event->display_image) }}" alt="Volunteering Photo" class="img-fluid">
+                        <h1 class="card-title">{{ $event->title }}</h1>
+                        <p class="card-text">{{ $event->description }}</p>
+                        <a href="{{ route('volunteer') }}" class="btn btn-primary btn-lg mx-auto">Volunteer Now</a>
                     </div>
                 </div>
             </div>
@@ -30,5 +29,7 @@
     </div>
 
     @include('00_FOOTER')
+
+</body>
 
 </html>

@@ -14,14 +14,13 @@
             <div class="col-md-8">
                 <div class="card text-center">
                     <div class="card-header">
-                        Volunteering Details
+                        Announcement Details
                     </div>
                     <div class="card-body">
-                        <img src="path/to/photo.jpg" alt="Announcement Photo" class="img-fluid mb-3">
-                        <h5 class="card-title">Important Announcement</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne
-                            merninisti licere mihi ista probare, quae sunt a te dicta?</p>
-                        <a href="{{('volunteer')}}" class="btn btn-primary btn-lg mx-auto">Volunteer Now</a>
+                        <img src="{{ asset($event->display_image) }}" alt="Announcement Photo" class="img-fluid">
+                        <h1 class="card-title">{{ $event->title }}</h1>
+                        <p class="card-text">{{ $event->description }}</p>
+                        
                     </div>
                 </div>
             </div>
