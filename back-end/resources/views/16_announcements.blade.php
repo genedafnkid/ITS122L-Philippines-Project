@@ -25,7 +25,7 @@
                             <div class="col-md-9">
                                 <h5>Important Announcement</h5>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta?</p>
-                                <a href="#" class="btn btn-primary btn-lg">See Details</a>
+                                <a href="{{('viewAnnouncement')}}" class="btn btn-primary btn-lg">See Details</a>
                             </div>
                         </div>
                         <hr>
@@ -36,7 +36,7 @@
                             <div class="col-md-9">
                                 <h5>Upcoming Event</h5>
                                 <p>Et hunc quidem intellegete in philosophum prima lanx forte devolvamur. Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers?</p>
-                                <a href="#" class="btn btn-primary btn-lg">See Details</a>
+                                <a href="{{('viewAnnouncement')}}" class="btn btn-primary btn-lg">See Details</a>
                             </div>
                             
                         </div>
