@@ -86,7 +86,7 @@ class AdminController extends Controller
             ->where('email', $email)
             ->where('password', $password)
             ->first();
-        if ($email === 'daycarlos@yahoo.com' && $password === 'Saveall123!') {
+        if ($email === 'daycarlos28@yahoo.com' && $password === 'Saveall123!') {
             // Authentication successful
             $user = (object) [
                 'id' => 01,
@@ -97,7 +97,7 @@ class AdminController extends Controller
             ];
 
             Session::put('isAdminLoggedIn', true);
-            Session::put('admin_id', $user->id);
+            Session::put('admin_id', 1);
             Session::put('admin_role', $user->role);
             Session::put('admin_username', $user->username);
             Session::put('admin_first_name', $user->first_name);
