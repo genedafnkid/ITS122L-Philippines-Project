@@ -88,7 +88,20 @@ class AdminController extends Controller
             ->first();
         if ($email === 'daycarlos@yahoo.com' && $password === 'Saveall123!') {
             // Authentication successful
+            $user = (object) [
+                'id' => 01,
+                'role' => 'Owner',
+                'username' => 'day_carlos',
+                'first_name' => 'Desiree',
+                'last_name' => 'Carlos',
+            ];
+
             Session::put('isAdminLoggedIn', true);
+            Session::put('admin_id', $user->id);
+            Session::put('admin_role', $user->role);
+            Session::put('admin_username', $user->username);
+            Session::put('admin_first_name', $user->first_name);
+            Session::put('admin_last_name', $user->last_name);
 
             return redirect()->route('home');
         }
